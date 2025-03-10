@@ -1,0 +1,44 @@
+@import "tailwindcss";
+
+body {
+  background-color: #f1f1f1;
+}
+
+@theme {
+  --color-primary: #4358f399;
+  --color-secondary: #1f32cb;
+  --color-button: #5869e5;
+}
+
+@layer base {
+  button {
+    cursor: pointer;
+  }
+}
+
+@keyframes spin-custom {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.spin-custom {
+  animation: spin-custom 10s linear infinite;
+}
+
+@layer components {
+  .bg-custom {
+    @apply bg-radial from-secondary to-primary;
+  }
+
+  .button-custom {
+    @apply active:scale-[.98] active:duration-200 hover:scale-[1.01] ease-in-out transition-all py-3 rounded-xl;
+  }
+}
+
+.active hr {
+  @apply block;
+}
