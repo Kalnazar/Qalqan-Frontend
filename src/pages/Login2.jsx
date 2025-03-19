@@ -1,7 +1,9 @@
 import React from "react";
 import { assets } from "../assets/assets";
+import { useNavigate } from "react-router-dom";
 
 const Login2 = () => {
+  const navigate = useNavigate();
   return (
     <div className="w-full h-screen bg-custom flex justify-center items-end pb-4">
       <div className="relative bg-[#6A78E2] px-10 pb-10 pt-20 rounded-3xl">
@@ -80,6 +82,24 @@ const Login2 = () => {
             Sign up
           </button>
         </div>
+      </div>
+      <div className="absolute top-5 right-5 flex gap-2 text-white">
+        <button
+          onClick={() => {
+            navigate("/login");
+          }}
+          className="p-5 button-custom bg-primary"
+        >
+          Login 1
+        </button>
+        <button
+          onClick={() => {
+            navigate("/login3");
+          }}
+          className="p-5 button-custom bg-primary"
+        >
+          Login 3
+        </button>
       </div>
     </div>
   );
